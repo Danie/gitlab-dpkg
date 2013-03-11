@@ -12,13 +12,9 @@ override_dh_auto_build:
 	bundle install --deployment --without development test
 	rm -rf vendor/bundle/ruby/1.9.1/cache
 
-override_dh_gencontrol:
-	dh_gencontrol
-
 override_dh_compress:
 	dh_compress -X usr/share/doc/gitlab/doc/
 
 override_dh_clean:
-	dh_clean -X config/unicorn.rb.orig
 	rm -rf vendor/bundle .bundle
 

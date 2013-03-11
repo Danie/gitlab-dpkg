@@ -10,7 +10,7 @@ set -e
 add_user() {
    # check if git user already exists and if not create it
    id -u git > /dev/null 2>&1 || {
-      adduser --quiet --system --group --disabled-password \
+      adduser --quiet --system --group --disabled-login \
       --home /var/lib/gitlab --shell /bin/sh --gecos 'GitLab User' git
    }
 }

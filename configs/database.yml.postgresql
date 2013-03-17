@@ -8,7 +8,7 @@ production:
   pool: 5
   username: gitlab
   password: 'gitlab'
-  # host: localhost
+  host: localhost
   # port: 5432 
   # socket: /tmp/postgresql.sock
 
@@ -22,6 +22,7 @@ development:
   pool: 5
   username: gitlab
   password: 'gitlab'
+  host: localhost
   # socket: /tmp/postgresql.sock
 
 #
@@ -34,6 +35,7 @@ staging:
   pool: 5
   username: gitlab
   password: 'gitlab'
+  host: localhost
   # socket: /tmp/postgresql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -46,4 +48,5 @@ test: &test
   pool: 5
   username: gitlab
   password: 'gitlab'
+  host: localhost
   # socket: /tmp/postgresql.sock

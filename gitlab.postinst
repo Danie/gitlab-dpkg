@@ -88,7 +88,8 @@ gitlab_shell_install() {
 #
 gitlab_db_initialize() {
    # determine needed database values
-   DB_ADAPTER=$(dialog --radiolist "Choose Databse-Adapter for GitLab" 0 0 0 "mysql" "MySQL-Database Adapter" on "postgresql" "PostgreSQL-Database Adapter" off 3>&1 1>&2 2>&3 3>&-)
+   DB_ADAPTER=$(dialog --radiolist "Choose Database-Adapter for GitLab" 0 0 0 "mysql" "MySQL-Database Adapter" on "postgresql" "PostgreSQL-Database Adapter" off 3>&1 1>&2 2>&3 3>&-)
+   DB_SERVER=$(dialog --inputbox "Please enter the Database-Servername for GitLab." 0 0 "localhost" 3>&1 1>&2 2>&3 3>&-)
    DB_DATABASE=$(dialog --inputbox "Please enter the Database for GitLab." 0 0 "gitlab" 3>&1 1>&2 2>&3 3>&-)
    DB_USER=$(dialog --inputbox "Please enter the Database-User for GitLab." 0 0 "gitlab" 3>&1 1>&2 2>&3 3>&-)
    DB_PASS=$(dialog --inputbox "Please enter the Database-Password for GitLab." 0 0 "gitlab" 3>&1 1>&2 2>&3 3>&-)
@@ -133,6 +134,7 @@ gitlab_db_initialize() {
    fi
 
    # place values into databse configuration
+   sed -i "s/host: localhost/host: $DB_SERVER/g" /etc/gitlab/database.yml.$DB_ADAPTER
    sed -i "s/database: gitlab/database: $DB_DATABASE/g" /etc/gitlab/database.yml.$DB_ADAPTER
    sed -i "s/username: gitlab/username: $DB_USER/g" /etc/gitlab/database.yml.$DB_ADAPTER
    sed -i "s/password: 'gitlab'/password: '$DB_PASS'/g" /etc/gitlab/database.yml.$DB_ADAPTER

@@ -1,8 +1,8 @@
-gitlab (5.0.0-1) unstable; urgency=low
+gitlab (5.0.0-1pre) unstable; urgency=l5w
 
   * Initial GitLab build
   * Package testet under Debian Squeeze
-  * Package based on GitLab-Version 5.0.0pre (a29c883) from Mar 10, 2013
-  * Package include gitlab-shell Version 1.0.4 (238fd9b) from Mar 11, 2013
+  * Package based on GitLab-Version 5.0.0pre (d2b882f) from Mar 14, 2013
+  * Package include gitlab-shell Version 1.1.0 (e8d93d0) from Mar 12, 2013
  
- -- Daniel Baeurer <daniel.baeurer@gmail.com>  Wed, 11 Mar 2013 11:02:22 +0100
+ -- Daniel Baeurer <daniel.baeurer@gmail.com>  Wed, 15 Mar 2013 19:26:16 +0100

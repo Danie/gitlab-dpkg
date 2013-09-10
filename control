@@ -14,7 +14,8 @@ Architecture: all
 Pre-Depends: adduser
 Depends: ${shlibs:Depends}, ${misc:Depends}, ruby (>= 1.9.3.194-1), git, sudo,
  postfix | mail-transport-agent, python-pygments, libpython2.6 | libpython2.7,
- redis-server (>= 2:2.4.0), bundler, dialog, curl, libmagic1
+ mysql-server | postgresql, redis-server (>= 2:2.4.0), bundler, dialog, curl,
+ libmagic1
 Description: Self hosted Git management software
  GitLab allows you to
  * keep your code secure on your own server

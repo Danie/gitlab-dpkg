@@ -1,5 +1,5 @@
---- a/Gemfile.lock	2013-03-15 11:51:22.365386676 +0100
-+++ b/Gemfile.lock	2013-03-15 11:51:58.352923477 +0100
+--- a/Gemfile.lock      2013-04-05 11:51:22.365386676 +0100
++++ b/Gemfile.lock      2013-04-05 11:51:58.352923477 +0100
 @@ -1,4 +1,11 @@
  GIT
 +  remote: https://github.com/Danie/charlock_holmes.git
@@ -8,11 +8,11 @@
 +  specs:
 +    charlock_holmes (0.6.9)
 +
-+GIT
-   remote: https://github.com/ctran/annotate_models.git
-   revision: be4e26825b521f0b2d86b181e2dff89901aa9b1e
-   specs:
-@@ -70,7 +77,6 @@
++GIT 
+   remote: git://github.com/gollum/gollum.git
+   revision: 5dcd3c8c8f68158e43ff79861279088ee56d0ebe
+   ref: 5dcd3c8c8f
+@@ -97,7 +104,6 @@
      celluloid (0.12.4)
        facter (>= 1.6.12)
        timers (>= 1.0.0)
@@ -20,7 +20,7 @@
      childprocess (0.3.8)
        ffi (~> 1.0, >= 1.0.11)
      chosen-rails (0.9.8)
-@@ -476,6 +482,7 @@
+@@ -505,6 +511,7 @@
    bootstrap-sass (= 2.2.1.1)
    capybara (= 2.0.2)
    carrierwave

@@ -1,0 +1,8 @@
+gitlab (5.0.1-1+wheezy1) unstable; urgency=l5w
+
+  * Initial GitLab build
+  * Package testet under Debian Squeeze
+  * Package based on GitLab-Version 5.0.1
+  * Package include gitlab-shell Version 1.1.0
+
+ -- Daniel Baeurer <daniel.baeurer@gmail.com>  Fri, 05 Apr 2013 19:26:16 +0100

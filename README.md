@@ -12,11 +12,12 @@ Prepare Build-Folder:
 
 4. cd gitlab-shell && git checkout v1.1.0
 
-5. cd .. && git clone https://github.com/Danie/gitlab-dpkg debian
+5. cd ../.. && tar -zcf gitlab_5.0.1.orig.tar.gz gitlab_5.0.1
 
-6. cd debian && git checkout squeeze-5-0-stable
+6. cd gitlab_5.0.1 && git clone https://github.com/Danie/gitlab-dpkg debian
 
-7. cd ../.. && tar -zcf gitlab_5.0.1.orig.tar.gz gitlab_5.0.1
+7. cd debian && git checkout squeeze-5-0-stable
+
 
 Prepare Debian Squeeze:
 
@@ -28,5 +29,5 @@ Prepare Debian Squeeze:
 
 Build Package:
 
-1. cd gitlab_5.0.1 && dpkg-buildpackage
+1. cd .. && dpkg-buildpackage
 

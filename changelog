@@ -1,4 +1,4 @@
-gitlab (5.0.1-1+squeeze1) unstable; urgency=l5w
+gitlab (5.0.1-1+squeeze1) unstable; urgency=low
 
   * Initial GitLab build
   * Package testet under Debian Squeeze

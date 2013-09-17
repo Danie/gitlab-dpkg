@@ -1,6 +1,6 @@
-gitlab (5.1.0-1+squeeze1) unstable; urgency=low
+gitlab (5.1.0-1+wheezy1) unstable; urgency=low
 
-  * Package testet under Debian Squeeze
+  * Package testet under Debian Wheezy
   * Package based on GitLab-Version 5.1.0
   * Package include gitlab-shell Version 1.3.0
 
@@ -9,7 +9,7 @@ gitlab (5.1.0-1+squeeze1) unstable; urgency=low
 gitlab (5.0.1-1+squeeze1) unstable; urgency=low
 
   * Initial GitLab build
-  * Package testet under Debian Squeeze
+  * Package testet under Debian Wheezy
   * Package based on GitLab-Version 5.0.1
   * Package include gitlab-shell Version 1.1.0
 

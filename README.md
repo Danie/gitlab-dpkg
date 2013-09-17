@@ -18,14 +18,9 @@ Prepare Build-Folder:
 
 7. cd debian && git checkout squeeze-5-1-stable
 
+Prepare Debian Wheezy:
 
-Prepare Debian Squeeze:
-
-1. echo 'deb http://176.28.19.74/debian/ squeeze main non-free contrib' >> /etc/apt/sources.list.d/danie-repo.list
-
-2. wget -O - http://176.28.19.74/009F5154.key | apt-key add - && apt-get update
-
-3. apt-get install debhelper build-essential git bundler ruby ruby-dev libruby libicu-dev libmagic-dev libmysqlclient-dev libpq-dev autoconf automake quilt libxml2-dev libxslt1-dev
+1. apt-get install debhelper build-essential git bundler ruby ruby-dev libruby libicu-dev libmagic-dev libmysqlclient-dev libpq-dev autoconf automake quilt libxml2-dev libxslt1-dev
 
 Build Package:
 

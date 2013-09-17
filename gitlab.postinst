@@ -34,6 +34,11 @@ create_dirs() {
    chown git:git /var/cache/gitlab
    chmod 0750 /var/cache/gitlab
 
+   # create gitlab pids directory
+   mkdir -p /var/cache/gitlab/pids
+   chown git:git /var/cache/gitlab/pids
+   chmod 0750 /var/cache/gitlab/pids
+
    # create gitlab log directory
    mkdir -p /var/log/gitlab
    chown git:git /var/log/gitlab
@@ -142,11 +147,6 @@ gitlab_db_initialize() {
    # link database configuration in gitlab base directory
    cd /usr/share/gitlab/config
    ln -s /etc/gitlab/database.yml.$DB_ADAPTER database.yml
-
-   # initialize the database structure
-   cd /usr/share/gitlab
-   sudo -u git -H bundle exec rake db:setup RAILS_ENV=production
-   sudo -u git -H bundle exec rake db:seed_fu RAILS_ENV=production
 }
 
 #

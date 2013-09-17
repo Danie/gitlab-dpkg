@@ -1,8 +1,6 @@
 --- a/Gemfile.lock      2013-04-05 11:51:22.365386676 +0100
 +++ b/Gemfile.lock      2013-04-05 11:51:58.352923477 +0100
-@@ -16,6 +16,13 @@
-       useragent (~> 0.4.16)
- 
+@@ -1,4 +1,11 @@
  GIT
 +  remote: https://github.com/Danie/charlock_holmes.git
 +  revision: 53562045174aadcb739e365822a006a996201569
@@ -14,17 +12,17 @@
    remote: https://github.com/ctran/annotate_models.git
    revision: be4e26825b521f0b2d86b181e2dff89901aa9b1e
    specs:
-@@ -97,7 +104,6 @@
+@@ -89,7 +96,6 @@
      celluloid (0.12.4)
        facter (>= 1.6.12)
        timers (>= 1.0.0)
 -    charlock_holmes (0.6.9)
-     childprocess (0.3.8)
-       ffi (~> 1.0, >= 1.0.11)
      chosen-rails (0.9.8)
-@@ -505,6 +511,7 @@
+       railties (~> 3.0)
+       thor (~> 0.14)
+@@ -484,6 +490,7 @@
    bootstrap-sass (= 2.2.1.1)
-   capybara (= 2.0.2)
+   capybara
    carrierwave
 +  charlock_holmes (= 0.6.9)!
    chosen-rails (= 0.9.8)

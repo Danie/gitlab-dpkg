@@ -39,6 +39,11 @@ create_dirs() {
    chown git:git /var/cache/gitlab/pids
    chmod 0750 /var/cache/gitlab/pids
 
+   # create gitlab pids directory
+   mkdir -p /var/cache/gitlab/sockets
+   chown git:git /var/cache/gitlab/sockets
+   chmod 0750 /var/cache/gitlab/sockets
+
    # create gitlab log directory
    mkdir -p /var/log/gitlab
    chown git:git /var/log/gitlab

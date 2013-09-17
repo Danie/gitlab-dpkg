@@ -16,18 +16,18 @@
 
 
 APP_ROOT="/usr/share/gitlab"
-DAEMON_OPTS="-c /etc/gitlab/unicorn.rb -E production"
-UNICORN_PID="/var/run/gitlab/unicorn.pid"
+DAEMON_OPTS="-C /etc/gitlab/puma.rb -e production"
+PUMA_PID="/var/run/gitlab/puma.pid"
 SIDEKIQ_PID="/var/cache/gitlab/pids/sidekiq.pid"
 STOP_SIDEKIQ="RAILS_ENV=production bundle exec rake sidekiq:stop"
 START_SIDEKIQ="RAILS_ENV=production bundle exec rake sidekiq:start"
 DAEMON_USER="git"
-NAME="unicorn"
+NAME="puma"
 DESC="GitLab service"
 
 check_pid(){
-  if [ -f $UNICORN_PID ]; then
-    PID=`cat $UNICORN_PID`
+  if [ -f $PUMA_PID ]; then
+    PID=`cat $PUMA_PID`
     SPID=`cat $SIDEKIQ_PID`
     STATUS=`ps aux | grep $PID | grep -v grep | wc -l`
   else
@@ -45,7 +45,7 @@ start() {
     exit 1
   else
     if [ `whoami` = root ]; then
-      sudo -u $DAEMON_USER -H bash -l -c "nohup bundle exec unicorn_rails $DAEMON_OPTS  > /dev/null  2>&1 &"
+      sudo -u $DAEMON_USER -H bash -l -c "RAILS_ENV=production bundle exec puma $DAEMON_OPTS"
       sudo -u $DAEMON_USER -H bash -l -c "$START_SIDEKIQ  > /dev/null  2>&1 &"
       echo "$DESC started"
     fi
@@ -57,9 +57,9 @@ stop() {
   check_pid
   if [ "$PID" -ne 0 -a "$STATUS" -ne 0 ]; then
     ## Program is running, stop it.
-    kill -QUIT `cat $UNICORN_PID`
+    kill -QUIT `cat $PUMA_PID`
     sudo -u $DAEMON_USER -H bash -l -c "$STOP_SIDEKIQ  > /dev/null  2>&1 &"
-    rm "$UNICORN_PID" >> /dev/null
+    rm "$PUMA_PID" >> /dev/null
     echo "$DESC stopped"
   else
     ## Program is not running, exit with error.
@@ -73,7 +73,7 @@ restart() {
   check_pid
   if [ "$PID" -ne 0 -a "$STATUS" -ne 0 ]; then
     echo "Restarting $DESC..."
-    kill -USR2 `cat $UNICORN_PID`
+    kill -USR2 `cat $PUMA_PID`
     sudo -u $DAEMON_USER -H bash -l -c "$STOP_SIDEKIQ  > /dev/null  2>&1 &"
     if [ `whoami` = root ]; then
       sudo -u $DAEMON_USER -H bash -l -c "$START_SIDEKIQ  > /dev/null  2>&1 &"

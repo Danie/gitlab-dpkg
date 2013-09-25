@@ -5,7 +5,7 @@ Maintainer: Daniel Baeurer <daniel.baeurer@gmail.com>
 Build-Depends: debhelper (>= 7.0.50~), build-essential, git, bundler,
  ruby (>= 1.9.3.194-1), ruby-dev (>= 1.9.3.194-1), libruby (>= 1.9.3.194-1),
  libicu-dev, libmagic-dev, libmysqlclient-dev, libpq-dev, autoconf, automake,
- quilt, libxml2-dev, libxslt1-dev
+ quilt, libxml2-dev, libxslt1-dev, ca-certificates
 Standards-Version: 3.9.3
 Homepage: http://gitlabhq.com/
 

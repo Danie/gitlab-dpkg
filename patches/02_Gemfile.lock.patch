@@ -5,8 +5,8 @@
  
  GIT
 +  remote: https://github.com/Danie/charlock_holmes.git
-+  revision: 53562045174aadcb739e365822a006a996201569
-+  branch: gitlab_patch
++  revision: ad18a3e261700dd722b541ffacd3f8a78f5ba00f
++  branch: 0.6.9-gitlab_patch
 +  specs:
 +    charlock_holmes (0.6.9)
 +

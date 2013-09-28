@@ -5,7 +5,7 @@
  gem "rails", "3.2.13"
 
 +# Use patched charlock_holmes with linking against system libmagic library.
-+gem "charlock_holmes", "0.6.9", :git => "https://github.com/Danie/charlock_holmes.git", :branch => "gitlab_patch"
++gem "charlock_holmes", "0.6.9", :git => "https://github.com/Danie/charlock_holmes.git", :branch => "0.6.9-gitlab_patch"
 +
  # Supported DBs
  gem "mysql2", group: :mysql

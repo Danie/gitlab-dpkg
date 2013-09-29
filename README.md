@@ -6,7 +6,7 @@ Prepare Build-Folder:
 
 1. git clone https://github.com/gitlabhq/gitlabhq gitlab_5.0.1
 
-2. cd gitlab_5.0.1 && git checkout 5-0-stable
+2. cd gitlab_5.0.1 && git checkout v5.0.1
 
 3. git clone https://github.com/gitlabhq/gitlab-shell
 
@@ -21,9 +21,12 @@ Prepare Build-Folder:
 
 Prepare Debian Squeeze:
 
-1. echo 'deb http://176.28.19.74/debian/ squeeze main non-free contrib' >> /etc/apt/sources.list.d/danie-repo.list
+1. cat > /etc/apt/sources.list.d/daniels.list << EOF
+deb http://176.28.19.74/ squeeze main contrib non-free
+deb-src http://176.28.19.74/ squeeze main contrib non-free
+EOF
 
-2. wget -O - http://176.28.19.74/009F5154.key | apt-key add - && apt-get update
+2. wget -O - http://176.28.19.74/key.asc | apt-key add - && apt-get update
 
 3. apt-get install debhelper build-essential git bundler ruby ruby-dev libruby libicu-dev libmagic-dev libmysqlclient-dev libpq-dev autoconf automake quilt libxml2-dev libxslt1-dev
 

@@ -6,7 +6,7 @@ Prepare Build-Folder:
 
 1. git clone https://github.com/gitlabhq/gitlabhq gitlab_5.0.1
 
-2. cd gitlab_5.0.1 && git checkout 5-0-stable
+2. cd gitlab_5.0.1 && git checkout v5.0.1
 
 3. git clone https://github.com/gitlabhq/gitlab-shell
 
@@ -25,4 +25,3 @@ Prepare Debian Wheezy:
 Build Package:
 
 1. cd .. && dpkg-buildpackage
-

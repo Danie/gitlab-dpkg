@@ -22,9 +22,9 @@ Prepare Build-Folder:
 Prepare Debian Squeeze:
 
 1. cat > /etc/apt/sources.list.d/daniels.list << EOF
-deb http://176.28.19.74/ squeeze main contrib non-free
-deb-src http://176.28.19.74/ squeeze main contrib non-free
-EOF
+   deb http://176.28.19.74/ squeeze main contrib non-free
+   deb-src http://176.28.19.74/ squeeze main contrib non-free
+   EOF
 
 2. wget -O - http://176.28.19.74/key.asc | apt-key add - && apt-get update
 

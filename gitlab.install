@@ -2,7 +2,6 @@ app            usr/share/gitlab
 db             usr/share/gitlab
 Gemfile        usr/share/gitlab
 Gemfile.lock   usr/share/gitlab
-.git           usr/share/gitlab
 lib            usr/share/gitlab
 public         usr/share/gitlab
 Rakefile       usr/share/gitlab

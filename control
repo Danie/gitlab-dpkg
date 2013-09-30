@@ -2,20 +2,18 @@ Source: gitlab
 Section: ruby
 Priority: optional
 Maintainer: Daniel Baeurer <daniel.baeurer@gmail.com>
-Build-Depends: debhelper (>= 7.0.50~), build-essential, git, bundler,
- ruby (>= 1.9.3.194-1), ruby-dev (>= 1.9.3.194-1), libruby (>= 1.9.3.194-1),
- libicu-dev, libmagic-dev, libmysqlclient-dev, libpq-dev, autoconf, automake,
- quilt, libxml2-dev, libxslt1-dev
+Build-Depends: autoconf, automake, build-essential, bundler, debhelper, git,
+ libicu-dev, libmagic-dev, libmysqlclient-dev, libpq-dev, libruby (>= 1.9.3.194),
+ libxml2-dev, libxslt1-dev, quilt, ruby (>= 1.9.3.194), ruby-dev (>= 1.9.3.194)
 Standards-Version: 3.9.3
 Homepage: http://gitlabhq.com/
 
 Package: gitlab
 Architecture: all
 Pre-Depends: adduser
-Depends: ${shlibs:Depends}, ${misc:Depends}, ruby (>= 1.9.3.194-1), git, sudo,
- postfix | mail-transport-agent, python-pygments, libpython2.6 | libpython2.7,
- redis-server (>= 2:2.4.0), bundler, dialog, curl, libmagic1
-Suggests: mysql-server | postgresql
+Depends: ${shlibs:Depends}, ${misc:Depends}, bundler, curl, dialog, git, libmagic1,
+ libpython2.6 | libpython2.7, mail-transport-agent | postfix, mysql-server | postgresql,
+ python-pygments, redis-server (>= 2:2.4.0), ruby (>= 1.9.3.194), sudo
 Description: Self hosted Git management software
  GitLab allows you to
  * keep your code secure on your own server

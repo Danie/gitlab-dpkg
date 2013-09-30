@@ -1,27 +1,26 @@
-gitlab-dpkg
-===========
+# gitlab-dpkg
 Debian-Folder to build GitLab DPKG-Package.
 
-Prepare Build-Folder:
+## Prepare Build-Folder
 
-1. git clone https://github.com/gitlabhq/gitlabhq gitlab_5.0.1
+    git clone https://github.com/gitlabhq/gitlabhq gitlab_5.0.1
 
-2. cd gitlab_5.0.1 && git checkout v5.0.1
+    cd gitlab_5.0.1 && git checkout v5.0.1
 
-3. git clone https://github.com/gitlabhq/gitlab-shell
+    git clone https://github.com/gitlabhq/gitlab-shell
 
-4. cd gitlab-shell && git checkout v1.1.0
+    cd gitlab-shell && git checkout v1.1.0
 
-5. cd ../.. && tar -zcf gitlab_5.0.1.orig.tar.gz gitlab_5.0.1
+    cd ../.. && tar -zcf gitlab_5.0.1.orig.tar.gz gitlab_5.0.1
 
-6. cd gitlab_5.0.1 && git clone https://github.com/Danie/gitlab-dpkg debian
+    cd gitlab_5.0.1 && git clone https://github.com/Danie/gitlab-dpkg debian
 
-7. cd debian && git checkout wheezy-5-0-stable
+    cd debian && git checkout wheezy-5-0-stable
 
-Prepare Debian Wheezy:
+## Prepare Debian Wheezy
 
-1. apt-get install debhelper build-essential git bundler ruby ruby-dev libruby libicu-dev libmagic-dev libmysqlclient-dev libpq-dev autoconf automake quilt libxml2-dev libxslt1-dev
+    apt-get install autoconf automake bundler debhelper libicu-dev libmagic-dev libmysqlclient-dev libpq-dev libruby libxml2-dev libxslt1-dev quilt ruby ruby-dev
 
-Build Package:
+## Build Package:
 
-1. cd .. && dpkg-buildpackage
+    cd .. && dpkg-buildpackage

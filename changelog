@@ -1,0 +1,16 @@
+gitlab (6.1.0-1+squeeze1) unstable; urgency=low
+
+  * Package testet under Debian Wheezy
+  * Package based on GitLab-Version 6.1.0
+  * Package include gitlab-shell Version 1.7.1
+
+ -- Daniel Baeurer <daniel.baeurer@gmail.com>  Wed, 23 Sep 2013 23:51:41 +0100
+
+gitlab (5.0.1-1+wheezy1) unstable; urgency=low
+
+  * Initial GitLab build
+  * Package testet under Debian Wheezy
+  * Package based on GitLab-Version 5.0.1
+  * Package include gitlab-shell Version 1.1.0
+
+ -- Daniel Baeurer <daniel.baeurer@gmail.com>  Fri, 05 Apr 2013 19:26:16 +0100

@@ -29,6 +29,10 @@ create_dirs() {
    mkdir -p /var/lib/gitlab/gitlab-satellites
    chown git:git /var/lib/gitlab/gitlab-satellites
 
+   # create gitlab uploads directory
+   mkdir -p /var/lib/gitlab/uploads
+   chown git:git /var/lib/gitlab/uploads
+
    # create gitlab cache directory
    mkdir -p /var/cache/gitlab
    chown git:git /var/cache/gitlab

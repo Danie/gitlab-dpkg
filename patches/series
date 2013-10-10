@@ -1,3 +1,1 @@
-01_Gemfile.patch
-02_Gemfile.lock.patch
-03_sidekiq.rake.patch
+01_sidekiq.rake.patch

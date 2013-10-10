@@ -2,20 +2,18 @@ Source: gitlab
 Section: ruby
 Priority: optional
 Maintainer: Daniel Baeurer <daniel.baeurer@gmail.com>
-Build-Depends: autoconf, automake, build-essential, bundler (>= 1.3.5), debhelper, git, libcurl4-openssl-dev,
- libffi-dev, libgdbm-dev, libicu-dev, libmagic-dev, libmysqlclient-dev, libncurses5-dev, libpq-dev, libreadline-dev,
- libruby2.0 (>= 2.0.0.299), libssl-dev, libxml2-dev, libxslt1-dev, libyaml-dev, quilt, ruby2.0 (>= 2.0.0.299),
- ruby2.0-dev (>= 2.0.0.299), zlib1g-dev
+Build-Depends: autoconf, automake, build-essential, bundler, debhelper, git, libcurl4-openssl-dev, libffi-dev,
+ libgdbm-dev, libicu-dev, libmagic-dev, libmysqlclient-dev, libncurses5-dev, libpq-dev, libreadline-dev, libruby (>= 1.9.3),
+ libssl-dev, libxml2-dev, libxslt1-dev, libyaml-dev, quilt, ruby (>= 1.9.3), ruby-dev (>= 1.9.3), zlib1g-dev
 Standards-Version: 3.9.3
 Homepage: http://gitlabhq.com/
 
 Package: gitlab
 Architecture: all
 Pre-Depends: adduser
-Depends: ${shlibs:Depends}, ${misc:Depends}, bundler (>= 1.3.5), curl, dialog, git, libmagic1,
+Depends: ${shlibs:Depends}, ${misc:Depends}, bundler, curl, dialog, git, libmagic1,
  libpython2.6 | libpython2.7, mail-transport-agent | postfix, mysql-server | postgresql,
- python-docutils, python-pygments, redis-server (>= 2:2.4.0), ruby2.0 (>= 2.0.0.299), sudo
-Suggests: mysql-server | postgresql
+ python-docutils, python-pygments, redis-server (>= 2:2.4.0), ruby (>= 1.9.3), sudo
 Description: Self hosted Git management software
  GitLab allows you to
  * keep your code secure on your own server

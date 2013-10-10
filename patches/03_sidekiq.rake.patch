@@ -1,5 +1,5 @@
---- lib/tasks/sidekiq.rake-orig   2013-10-10 18:20:36.254025544 +0200
-+++ lib/tasks/sidekiq.rake  2013-10-10 18:27:57.914044911 +0200
+--- a/lib/tasks/sidekiq.rake  2013-10-10 18:20:36.254025544 +0200
++++ b/lib/tasks/sidekiq.rake  2013-10-10 18:27:57.914044911 +0200
 @@ -15,6 +15,7 @@
    end
  

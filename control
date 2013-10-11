@@ -11,8 +11,8 @@ Homepage: http://gitlabhq.com/
 Package: gitlab
 Architecture: all
 Pre-Depends: adduser
-Depends: ${shlibs:Depends}, ${misc:Depends}, bundler, curl, dialog, git, libmagic1,
- libpython2.6 | libpython2.7, mail-transport-agent | postfix, mysql-server | postgresql,
+Depends: ${shlibs:Depends}, ${misc:Depends}, bundler, curl, dialog, git, libicu48, libmagic1,
+ libpython2.7 | libpython2.6, postfix | mail-transport-agent, mysql-server | postgresql,
  python-docutils, python-pygments, redis-server (>= 2:2.4.0), ruby (>= 1.9.3), sudo
 Description: Self hosted Git management software
  GitLab allows you to

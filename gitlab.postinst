@@ -29,6 +29,10 @@ create_dirs() {
    mkdir -p /var/lib/gitlab/gitlab-satellites
    chown git:git /var/lib/gitlab/gitlab-satellites
 
+   # create gitlab uploads directory
+   mkdir -p /var/lib/gitlab/uploads
+   chown git:git /var/lib/gitlab/uploads
+
    # create gitlab cache directory
    mkdir -p /var/cache/gitlab
    chown git:git /var/cache/gitlab
@@ -173,6 +177,15 @@ gitlab_app_initialize() {
 }
 
 #
+# Function: gitlab_gen_secret
+#
+# Description: generate the hex secret token and write it to gitlab folder
+#
+gitlab_gen_secret() {
+   hexdump /dev/urandom | head | cut --bytes=10-60 | tr -d ' \n' | cut --bytes=-128 > /usr/share/gitlab/.secret
+}
+
+#
 # Description: running configuration tasks
 #
 case "$1" in
@@ -185,6 +198,7 @@ case "$1" in
          # running the tasks
          add_user
          create_dirs
+         gitlab_gen_secret
          gitlab_shell_install $FQDN
          gitlab_db_initialize
          gitlab_app_initialize $FQDN

@@ -10,7 +10,7 @@ override_dh_installinit:
 
 override_dh_auto_build:
 	bundle install --deployment --without development test
-	rm -rf vendor/bundle/ruby/2.0.0/cache
+	rm -rf vendor/bundle/ruby/1.9.1/cache
 
 override_dh_compress:
 	dh_compress -X usr/share/doc/gitlab/doc/

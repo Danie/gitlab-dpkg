@@ -1,0 +1,10 @@
+/etc/gitlab/environments      /usr/share/gitlab/config/environments
+/etc/gitlab/gitlab.yml        /usr/share/gitlab/config/gitlab.yml
+/etc/gitlab/resque.yml        /usr/share/gitlab/config/resque.yml
+
+/etc/gitlab/gitlab-shell.yml  /usr/share/gitlab-shell/config.yml
+
+/usr/share/doc/gitlab/doc     /usr/share/gitlab/doc
+/var/cache/gitlab             /usr/share/gitlab/tmp
+/var/log/gitlab               /usr/share/gitlab/log
+/var/lib/gitlab/uploads       /usr/share/gitlab/public/uploads

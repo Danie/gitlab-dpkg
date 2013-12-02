@@ -1,10 +1,10 @@
-gitlab (6.2.2-1+wheezy1) unstable; urgency=low
+gitlab (6.2.4-1+wheezy1) unstable; urgency=low
 
   * Package testet under Debian Wheezy
-  * Package based on GitLab-Version 6.2.2
-  * Package include gitlab-shell Version 1.7.1
+  * Package based on GitLab-Version 6.2.4
+  * Package include gitlab-shell Version 1.7.4
 
- -- Daniel Baeurer <daniel.baeurer@gmail.com>  Sun, 03 Nov 2013 13:59:23 +0100
+ -- Daniel Baeurer <daniel.baeurer@gmail.com>  Mon, 18 Nov 2013 19:23:12 +0100
 
 gitlab (6.1.0-1+wheezy1) unstable; urgency=low
 

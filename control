@@ -1,0 +1,27 @@
+Source: gitlab
+Section: ruby
+Priority: optional
+Maintainer: Daniel Baeurer <daniel.baeurer@gmail.com>
+Build-Depends: autoconf, automake, build-essential, bundler, debhelper, git, libcurl4-openssl-dev, libffi-dev,
+ libgdbm-dev, libicu-dev, libmagic-dev, libmysqlclient-dev, libncurses5-dev, libpq-dev, libreadline-dev, libruby (>= 1.9.3),
+ libssl-dev, libxml2-dev, libxslt1-dev, libyaml-dev, quilt, ruby (>= 1.9.3), ruby-dev (>= 1.9.3), zlib1g-dev
+Standards-Version: 3.9.3
+Homepage: http://gitlabhq.com/
+
+Package: gitlab
+Architecture: all
+Pre-Depends: adduser
+Depends: ${shlibs:Depends}, ${misc:Depends}, bundler, curl, dialog, git (>= 1.7.10), libicu48, libmagic1,
+ libpython2.7 | libpython2.6, postfix | mail-transport-agent, mysql-server | postgresql,
+ python-docutils, python-pygments, redis-server (>= 2:2.4.0), ruby (>= 1.9.3), sudo
+Description: Self hosted Git management software
+ GitLab allows you to
+ * keep your code secure on your own server
+ * manage repositories, users and access permissions
+ * communicate though issues, line-comments and wiki's
+ * perform code reviews with merge requests
+ .
+ GitLab is
+ * powered by Ruby on Rails
+ * completely free and open source (MIT license)
+ * used by 10.000 organization to keep their code secure

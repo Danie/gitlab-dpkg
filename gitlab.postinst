@@ -76,6 +76,18 @@ create_dirs() {
 }
 
 #
+# Function: create_dummy_git_repo
+#
+# Description: creates a dummy git repo to avoid obscure git warnings
+#
+create_dummy_git_repo() {
+   cd /usr/share/gitlab
+   git init
+   git add VERSION
+   git commit -m "dummy git repo"
+}
+
+#
 # Function: gitlab_shell_install
 #
 # Description: creates gitlab-shell directory and initialize it
@@ -186,25 +198,64 @@ gitlab_gen_secret() {
 }
 
 #
+# Function: gitlab_backup
+#
+# Description: creates a backup of gitlab under /var/cache/gitlab/backups
+#
+gitlab_backup() {
+   cd /usr/share/gitlab
+   sudo -u git -H bundle exec rake gitlab:backup:create RAILS_ENV=production
+}
+
+#
+# Function: gitlab_update_61_62
+#
+# Description: all needed tasks to migrate from gitlab 6.1 to 6.2
+#
+# Parameters: $FQDN
+#
+gitlab_update_61_62() {
+   # create dummy git repo
+   create_dummy_git_repo
+
+   # install new version of gitlab shell
+   gitlab_shell_install $FQDN
+
+   # running migration tasks for gitlab
+   cd /usr/share/gitlab
+   bundle exec rake db:migrate RAILS_ENV=production
+   bundle exec rake assets:clean RAILS_ENV=production
+   bundle exec rake assets:precompile RAILS_ENV=production
+   bundle exec rake cache:clear RAILS_ENV=production
+
+   # Set the permissions of the assets to git user
+   chown -R git:git /var/cache/gitlab/cache
+}
+
+#
 # Description: running configuration tasks
 #
 case "$1" in
    configure)
+      # determine the FQDN of the gitlab server
+      FQDN=$(dialog --inputbox "Please enter FQDN of GitLab-Server." 0 0 "$(hostname -f)" 3>&1 1>&2 2>&3 3>&-)
+
       if [ -z "$2" ]
       then
-         # determine the FQDN of the gitlab server
-         FQDN=$(dialog --inputbox "Please enter FQDN of GitLab-Server." 0 0 "$(hostname -f)" 3>&1 1>&2 2>&3 3>&-)
-
-         # running the tasks
+         # running install tasks
          add_user
          create_dirs
+         create_dummy_git_repo
          gitlab_gen_secret
          gitlab_shell_install $FQDN
          gitlab_db_initialize
          gitlab_app_initialize $FQDN
       else
-         # in case of upgrade. but at the moment no upgrade needed.
-         echo "Upgrading not implementated yet"
+         # running backup
+         gitlab_backup
+
+         # running migration 6.1 -> 6.2 tasks
+         gitlab_update_61_62 $FQDN
       fi
    ;;
 esac

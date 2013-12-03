@@ -14,7 +14,8 @@ case "$1" in
       rm -rf /usr/share/gitlab
 
       echo "The gitlab home-directory with all the repositories will not be deleted!"
-      echo "Please do this manually!"
+      echo "Please do this manually with: rm -Rf /var/lib/gitlab"
+      echo "WARNING! ALL REPOSITORIES WILL BE DELETED!"
    ;;
 esac
 

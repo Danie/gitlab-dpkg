@@ -191,6 +191,8 @@ gitlab_app_initialize() {
 #
 # Function: gitlab_git_global_settings
 #
+# Description: creates git global settings file for the gitlab user
+#
 # Parameters: $FQDN
 #
 gitlab_git_global_settings() {
@@ -232,7 +234,7 @@ gitlab_upgrade() {
    fi
 
    # initialize global git settings
-   if [ ! -f /var/lib/gitlab ]; then
+   if [ ! -f /var/lib/gitlab/.gitconfig ]; then
       gitlab_git_global_settings $FQDN
    fi
 

@@ -1,0 +1,14 @@
+--- a/script/background_jobs 2013-11-03 14:29:42.165977061 +0100
++++ b/script/background_jobs 2013-12-02 17:31:24.492623149 +0100
+@@ -2,8 +2,8 @@
+ 
+ cd $(dirname $0)/..
+ app_root=$(pwd)
+-sidekiq_pidfile="$app_root/tmp/pids/sidekiq.pid"
+-sidekiq_logfile="$app_root/log/sidekiq.log"
++sidekiq_pidfile="/var/run/gitlab/sidekiq.pid"
++sidekiq_logfile="/var/log/gitlab/sidekiq.log"
+ gitlab_user=$(ls -l config.ru | awk '{print $3}')
+ 
+ function stop
+

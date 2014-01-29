@@ -20,7 +20,7 @@
 -unicorn_pidfile="$app_root/tmp/pids/unicorn.pid"
 -unicorn_config="$app_root/config/unicorn.rb"
 +unicorn_pidfile="/var/run/gitlab/unicorn.pid"
-+unicorn_config="/usr/share/gitlab/config/unicorn.rb"
++unicorn_config="/etc/gitlab/unicorn.rb"
  
  function get_unicorn_pid
  {

@@ -57,8 +57,12 @@ Author: Andreas Wirooks <andreas.wirooks@1und1.de>
  
    ## Backup settings
    backup:
-@@ -177,8 +176,8 @@
-     path: /home/git/gitlab-shell/
+@@ -174,11 +173,11 @@
+ 
+   ## GitLab Shell settings
+   gitlab_shell:
+-    path: /home/git/gitlab-shell/
++    path: /var/lib/gitlab/gitlab-shell/
  
      # REPOS_PATH MUST NOT BE A SYMLINK!!!
 -    repos_path: /home/git/repositories/
@@ -170,9 +174,10 @@ Author: Andreas Wirooks <andreas.wirooks@1und1.de>
 -  database: gitlabhq_production
 +  database: gitlab
    pool: 10
-   username: git
+-  username: git
 -  password: "secure password"
 -  # host: localhost
++  username: gitlab
 +  password: 'gitlab'
 +  host: localhost
    # socket: /tmp/mysql.sock

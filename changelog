@@ -21,7 +21,7 @@ gitlab (6.4.3-2+wheezy1) unstable; urgency=low
   * gitlab.postinst: Added missing migration task migrate_iids from 6.1
   * gitlab.gitlab.default: File removed because using the patches examples
 
- -- Andreas Wirooks <andreas.wirooks@1and1.de>  Wed, 29 Jan 2013 11:46:10 +0100
+ -- Andreas Wirooks <andreas.wirooks@1and1.de>  Wed, 29 Jan 2014 14:45:45 +0100
 
 gitlab (6.4.3-1+wheezy1) unstable; urgency=low
 

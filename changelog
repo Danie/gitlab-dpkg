@@ -8,6 +8,7 @@ gitlab (6.4.3-2+wheezy1) unstable; urgency=low
   * Control: Added libxslt1.1 and openssh-server to runtime dependancies to
     satisfy the gem with native binding and to ensure openssh is running for
     git ssh access
+  * Control: Added python2.7 as build dependancy for libv8
   * README.md: Versionize all ruby dependancies
   * copyright: Added myself to the contributors
   * Don't suppy config files in the debian directory anymore and use quilt

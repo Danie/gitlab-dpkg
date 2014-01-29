@@ -4,7 +4,8 @@ Priority: optional
 Maintainer: Daniel Baeurer <daniel.baeurer@gmail.com>
 Build-Depends: autoconf, automake, build-essential, bundler, debhelper, git, libcurl4-openssl-dev, libffi-dev,
  libgdbm-dev, libicu-dev, libmagic-dev, libmysqlclient-dev, libncurses5-dev, libpq-dev, libreadline-dev, libruby (>= 1.9.3),
- libssl-dev, libxml2-dev, libxslt1-dev, libyaml-dev, quilt, ruby (>= 1.9.3), ruby-dev (>= 1.9.3), zlib1g-dev, ca-certificates
+ libssl-dev, libxml2-dev, libxslt1-dev, libyaml-dev, quilt, ruby (>= 1.9.3), ruby-dev (>= 1.9.3), zlib1g-dev, python2.7,
+ ca-certificates
 Standards-Version: 3.9.3
 Homepage: http://gitlabhq.com/
 

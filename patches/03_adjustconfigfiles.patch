@@ -213,3 +213,11 @@ Author: Andreas Wirooks <andreas.wirooks@1und1.de>
  test: redis://localhost:6379
 -production: redis://redis.example.com:6379
 +production: redis://localhost:6379
+--- a/lib/support/init.d/gitlab.default.example
++++ b/lib/support/init.d/gitlab.default.example
+@@ -11,4 +11,4 @@
+ 
+ # app_root defines the folder in which gitlab and it's components are installed.
+ # The default is "/home/$app_user/gitlab"
+-app_root="/home/$app_user/gitlab"
++app_root="/usr/share/gitlab"

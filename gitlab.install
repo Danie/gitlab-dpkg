@@ -23,13 +23,16 @@ config/routes.rb        usr/share/gitlab/config
 
 config/application.rb                  etc/gitlab
 config/environments                    etc/gitlab
-debian/configs/database.yml.mysql      etc/gitlab
-debian/configs/database.yml.postgresql etc/gitlab
-debian/configs/gitlab.yml              etc/gitlab
-debian/configs/gitlab-shell.yml        etc/gitlab
-debian/configs/rack_attack.rb          etc/gitlab
-debian/configs/resque.yml              etc/gitlab
-debian/configs/unicorn.rb              etc/gitlab
+config/database.yml.mysql              etc/gitlab
+config/database.yml.postgresql         etc/gitlab
+config/gitlab.yml                      etc/gitlab
+gitlab-shell/gitlab-shell.yml          etc/gitlab
+config/initializers/rack_attack.rb     etc/gitlab
+config/resque.yml                      etc/gitlab
+config/unicorn.rb                      etc/gitlab
+
+lib/support/init.d/gitlab              etc/init.d
+lib/support/default/gitlab             etc/default
 
 config/aws.yml.example     usr/share/doc/gitlab
 config/database.yml.*      usr/share/doc/gitlab

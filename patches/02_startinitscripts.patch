@@ -1,0 +1,52 @@
+--- a/script/background_jobs
++++ b/script/background_jobs
+@@ -2,13 +2,14 @@
+ 
+ cd $(dirname $0)/..
+ app_root=$(pwd)
+-sidekiq_pidfile="$app_root/tmp/pids/sidekiq.pid"
+-sidekiq_logfile="$app_root/log/sidekiq.log"
+-gitlab_user=$(ls -l config.ru | awk '{print $3}')
++sidekiq_pidfile="/var/run/gitlab/sidekiq.pid"
++sidekiq_logfile="/var/log/gitlab/sidekiq.log"
++#gitlab_user=$(ls -l config.ru | awk '{print $3}')
++gitlab_user=git
+ 
+ function stop
+ {
+-  bundle exec sidekiqctl stop $sidekiq_pidfile >> $sidekiq_logfile 2>&1
++  bundle exec sidekiqctl stop /var/run/gitlab/sidekiq.pid >> $sidekiq_logfile 2>&1
+ }
+ 
+ function killall
+@@ -18,7 +19,7 @@
+ 
+ function restart
+ {
+-  if [ -f $sidekiq_pidfile ]; then
++  if [ -f /var/run/gitlab/sidekiq.pid ]; then
+     stop
+   fi
+   killall
+@@ -32,7 +33,7 @@
+ 
+ function start_sidekiq
+ {
+-  bundle exec sidekiq -q post_receive,mailer,system_hook,project_web_hook,gitlab_shell,common,default -e $RAILS_ENV -P $sidekiq_pidfile $@ >> $sidekiq_logfile 2>&1
++  bundle exec sidekiq -q post_receive,mailer,system_hook,project_web_hook,gitlab_shell,common,default -e $RAILS_ENV -P /var/run/gitlab/sidekiq.pid $@ >> $sidekiq_logfile 2>&1
+ }
+ 
+ case "$1" in
+--- a/script/web
++++ b/script/web
+@@ -3,8 +3,8 @@
+ cd $(dirname $0)/..
+ app_root=$(pwd)
+ 
+-unicorn_pidfile="$app_root/tmp/pids/unicorn.pid"
+-unicorn_config="$app_root/config/unicorn.rb"
++unicorn_pidfile="/var/run/gitlab/unicorn.pid"
++unicorn_config="/usr/share/gitlab/config/unicorn.rb"
+ 
+ function get_unicorn_pid
+ {

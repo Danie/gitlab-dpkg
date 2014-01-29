@@ -6,11 +6,18 @@
 	dh $@ --with quilt
 
 override_dh_installinit:
-	dh_installinit -pgitlab --name gitlab
+	dh_installinit -pgitlab --name gitlab --onlyscripts
 
 override_dh_auto_build:
 	bundle install --deployment --without development test
-	rm -rf vendor/bundle/ruby/1.9.1/cache
+	rm -rf vendor/bundle/ruby/1.9.1/cache lib/support/default
+	cp config/gitlab.yml.example config/gitlab.yml
+	cp config/resque.yml.example config/resque.yml
+	cp config/unicorn.rb.example config/unicorn.rb
+	cp config/initializers/rack_attack.rb.example config/initializers/rack_attack.rb
+	cp gitlab-shell/config.yml.example gitlab-shell/gitlab-shell.yml
+	mkdir lib/support/default
+	cp lib/support/init.d/gitlab.default.example lib/support/default/gitlab
 
 override_dh_compress:
 	dh_compress -X usr/share/doc/gitlab/doc/

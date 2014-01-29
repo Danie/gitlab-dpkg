@@ -25,6 +25,7 @@ License: MIT
 
 Files: debian/*
 Copyright: Copyright 2013 Daniel Baeurer <daniel.baeurer@gmail.com>
+           Copyright 2013 Andreas Wirooks <andreas.wirooks@1und1.de>
 License: GPL-2+
  On Debian systems, the full text of the GNU General Public
  License version 2 can be found in the file

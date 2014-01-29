@@ -244,6 +244,7 @@ gitlab_upgrade() {
    # running migration tasks for gitlab
    cd /usr/share/gitlab
    bundle exec rake db:migrate RAILS_ENV=production
+   bundle exec rake migrate_iids RAILS_ENV=production
    bundle exec rake assets:clean RAILS_ENV=production
    bundle exec rake assets:precompile RAILS_ENV=production
    bundle exec rake cache:clear RAILS_ENV=production

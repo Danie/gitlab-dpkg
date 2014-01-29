@@ -1,2 +1,4 @@
-01_background_jobs.patch
-02_web.patch
+01_pbuilder.patch
+02_startinitscripts.patch
+03_adjustconfigfiles.patch
+04_initdscript.patch

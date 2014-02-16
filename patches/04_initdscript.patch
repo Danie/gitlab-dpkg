@@ -1,0 +1,18 @@
+Description: use quilt to adjust the inid.d script to the right location
+ use quilt to adjust the inid.d script to the right location
+
+--- a/lib/support/init.d/gitlab
++++ b/lib/support/init.d/gitlab
+@@ -30,9 +30,9 @@
+ # Script variable names should be lower-case not to conflict with
+ # internal /bin/sh variables such as PATH, EDITOR or SHELL.
+ app_user="git"
+-app_root="/home/$app_user/gitlab"
+-pid_path="$app_root/tmp/pids"
+-socket_path="$app_root/tmp/sockets"
++app_root="/usr/share/gitlab"
++pid_path="/var/run/gitlab"
++socket_path="/var/run/gitlab"
+ web_server_pid_path="$pid_path/unicorn.pid"
+ sidekiq_pid_path="$pid_path/sidekiq.pid"
+ 

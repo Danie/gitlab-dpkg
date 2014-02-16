@@ -2,6 +2,7 @@
 /etc/gitlab/environments      /usr/share/gitlab/config/environments
 /etc/gitlab/gitlab.yml        /usr/share/gitlab/config/gitlab.yml
 /etc/gitlab/resque.yml        /usr/share/gitlab/config/resque.yml
+/etc/gitlab/unicorn.rb        /usr/share/gitlab/config/unicorn.rb
 
 /etc/gitlab/rack_attack.rb    /usr/share/gitlab/config/initializers/rack_attack.rb
 

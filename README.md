@@ -19,7 +19,7 @@ Debian-Folder to build GitLab DPKG-Package.
 
 ## Prepare Debian Wheezy
 
-    apt-get install autoconf automake bundler debhelper libcurl4-openssl-dev libffi-dev libgdbm-dev libicu-dev libmagic-dev libmysqlclient-dev libncurses5-dev libpq-dev libreadline-dev libruby libssl-dev libxml2-dev libxslt1-dev libyaml-dev quilt ruby ruby-dev zlib1g-dev
+    apt-get install autoconf automake bundler debhelper libcurl4-openssl-dev libffi-dev libgdbm-dev libicu-dev libmagic-dev libmysqlclient-dev libncurses5-dev libpq-dev libreadline-dev libruby1.9.1 libssl-dev libxml2-dev libxslt1-dev libyaml-dev quilt ruby1.9.3 ruby1.9.1-dev zlib1g-dev
 
 ## Build Package:
 

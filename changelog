@@ -1,3 +1,28 @@
+gitlab (6.4.3-2+wheezy1) unstable; urgency=low
+
+  * Control: Changed architecture from all to any because some gems have native
+    bindings to libs and so the package only works on the architecture where it
+    is built
+  * Control: Added ca-certificates to build dependancies to fix building with
+    pbuilder
+  * Control: Added libxslt1.1 and openssh-server to runtime dependancies to
+    satisfy the gem with native binding and to ensure openssh is running for
+    git ssh access
+  * Control: Added python2.7 as build dependancy for libv8
+  * README.md: Versionize all ruby dependancies
+  * copyright: Added myself to the contributors
+  * Don't suppy config files in the debian directory anymore and use quilt
+    patches to the original examples to adjust them to package structure to
+    make updates easier. This includes changes to:
+  * rules: Added copying the patched example configfiles
+  * gitlab.install: Changed to copying the patched example configfiles
+  * configs: Directory removed because using the patched examples
+  * gitlab.gitlab.init: File removed because using the patched examples
+  * gitlab.postinst: Added missing migration task migrate_iids from 6.1
+  * gitlab.gitlab.default: File removed because using the patches examples
+
+ -- Andreas Wirooks <andreas.wirooks@1and1.de>  Wed, 29 Jan 2014 14:45:45 +0100
+
 gitlab (6.4.3-1+wheezy1) unstable; urgency=low
 
   * Package testet under Debian Wheezy

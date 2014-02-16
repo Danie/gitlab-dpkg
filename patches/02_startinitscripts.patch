@@ -1,0 +1,26 @@
+--- a/script/background_jobs
++++ b/script/background_jobs
+@@ -2,8 +2,8 @@
+ 
+ cd $(dirname $0)/..
+ app_root=$(pwd)
+-sidekiq_pidfile="$app_root/tmp/pids/sidekiq.pid"
+-sidekiq_logfile="$app_root/log/sidekiq.log"
++sidekiq_pidfile="/var/run/gitlab/sidekiq.pid"
++sidekiq_logfile="/var/log/gitlab/sidekiq.log"
+ gitlab_user=$(ls -l config.ru | awk '{print $3}')
+ 
+ function stop
+--- a/script/web
++++ b/script/web
+@@ -3,8 +3,8 @@
+ cd $(dirname $0)/..
+ app_root=$(pwd)
+ 
+-unicorn_pidfile="$app_root/tmp/pids/unicorn.pid"
+-unicorn_config="$app_root/config/unicorn.rb"
++unicorn_pidfile="/var/run/gitlab/unicorn.pid"
++unicorn_config="/etc/gitlab/unicorn.rb"
+ 
+ function get_unicorn_pid
+ {

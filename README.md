@@ -20,8 +20,8 @@ Debian-Folder to build GitLab DPKG-Package.
 ## Prepare Debian Squeeze
 
     cat > /etc/apt/sources.list.d/daniels.list << EOF
-    deb http://176.28.19.74/ squeeze-daniels-backports main contrib non-free
-    deb-src http://176.28.19.74/ squeeze-daniels-backports main contrib non-free
+    deb http://debian.shokado-bento.org/ squeeze-daniels-backports main contrib non-free
+    deb-src http://debian.shokado-bento.org/ squeeze-daniels-backports main contrib non-free
     EOF
 
     cat > /etc/apt/preferences.d/daniels.pref << EOF
@@ -30,7 +30,7 @@ Debian-Folder to build GitLab DPKG-Package.
     Pin-Priority: 50
     EOF
 
-    wget -O - http://176.28.19.74/key.asc | apt-key add - && apt-get update
+    wget -O - http://debian.shokado-bento.org/key.asc | apt-key add - && apt-get update
 
     apt-get -t squeeze-daniels-backports install autoconf automake bundler debhelper libicu-dev libmagic-dev libmysqlclient-dev libpq-dev libruby libxml2-dev libxslt1-dev quilt ruby ruby-dev
 
